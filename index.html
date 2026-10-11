@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form — Inter Department Cultural Events | St. Joseph's College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =========================================================
+     LOGIN SCREEN (front page)
+     ========================================================= -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="brand-mark">St. Joseph's College <span>Inter Department Cultural Events</span></div>
+    <h1>Sign in to continue</h1>
+    <p class="login-sub">Enter your credentials to access the registration form.</p>
+
+    <div id="loginError" class="login-error">Invalid User ID or Password. Please try again.</div>
+
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label class="field-label" for="login_userid">User ID</label>
+        <input type="text" id="login_userid" name="login_userid" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label class="field-label" for="login_password">Password</label>
+        <input type="password" id="login_password" name="login_password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <p class="login-hint">Access is restricted to registered coordinators/students.</p>
+  </div>
+</div>
+
+<!-- =========================================================
+     MAIN APPLICATION (hidden until login succeeds)
+     ========================================================= -->
+<div id="mainApp" style="display:none;">
+
+<nav class="site-nav">
+  <span class="brand">St. Joseph's College <span>Inter Department Cultural Events</span></span>
+  
+</nav>
+
+<header class="form-hero">
+  <span class="eyebrow">Participation Registration Form</span>
+  <h1>ST. JOSEPH'S COLLEGE (AUTONOMOUS), TIRUCHIRAPPALLI – 620002</h1>
+  <p>Fill in your details, tick the events you want to take part in, and pass this on to your Faculty Coordinator for signature.</p>
+</header>
+
+<div class="form-wrap">
+  <div class="form-card">
+    <form>
+
+      <fieldset>
+        <legend>Student details</legend>
+
+        <div class="field">
+          <label class="field-label" for="student_name">Name of the student</label>
+          <input type="text" id="student_name" name="student_name" required autocomplete="off">
+          <span class="field-msg" id="student_name_msg"></span>
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label class="field-label" for="dob">Date of birth</label>
+            <input type="date" id="dob" name="dob" required>
+            <span class="field-msg" id="dob_msg"></span>
+          </div>
+          <div class="field">
+            <label class="field-label" for="mobile_no">Mobile number</label>
+            <input type="tel" id="mobile_no" name="mobile_no" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            <span class="field-msg" id="mobile_no_msg"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="field-label">Gender</span>
+          <div class="radio-row">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+          <span class="field-msg" id="gender_msg"></span>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="address">Address</label>
+          <textarea id="address" name="address"></textarea>
+          <span class="field-msg" id="address_msg"></span>
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label class="field-label" for="department">Department</label>
+            <input type="text" id="department" name="department" required>
+            <span class="field-msg" id="department_msg"></span>
+          </div>
+          <div class="field">
+            <label class="field-label" for="year_semester">Year / semester</label>
+            <input type="text" id="year_semester" name="year_semester" required>
+            <span class="field-msg" id="year_semester_msg"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="registration_no">Registration number</label>
+          <input type="text" id="registration_no" name="registration_no" required>
+          <span class="field-msg" id="registration_no_msg"></span>
+        </div>
+      </fieldset>
+
+      <fieldset id="eventsFieldset">
+        <legend>Cultural events — choose everything you'd like to join</legend>
+        <p class="locked-note">Complete the student details above to unlock this section.</p>
+
+        <div class="event-block card-literary" style="--accent: var(--marigold);">
+          <h4><span class="dot"></span>1. Literary Events</h4>
+          <div class="event-options">
+            <label><input type="checkbox" name="literary" value="Essay Writing"> Essay Writing</label>
+            <label><input type="checkbox" name="literary" value="Poetry Writing"> Poetry Writing</label>
+            <label><input type="checkbox" name="literary" value="Speech Competition"> Speech Competition</label>
+            <label><input type="checkbox" name="literary" value="Debate"> Debate</label>
+            <label><input type="checkbox" name="literary" value="Quiz"> Quiz</label>
+          </div>
+        </div>
+
+        <div class="event-block" style="--accent: var(--magenta);">
+          <h4><span class="dot"></span>2. Fine Arts Events</h4>
+          <div class="event-options">
+            <label><input type="checkbox" name="finearts" value="Drawing"> Drawing</label>
+            <label><input type="checkbox" name="finearts" value="Painting"> Painting</label>
+            <label><input type="checkbox" name="finearts" value="Rangoli/Kolam"> Rangoli / Kolam</label>
+            <label><input type="checkbox" name="finearts" value="Craft Making"> Craft Making</label>
+          </div>
+        </div>
+
+        <div class="event-block" style="--accent: var(--teal);">
+          <h4><span class="dot"></span>3. Performing Arts Events</h4>
+          <div class="event-options">
+            <label><input type="checkbox" name="performing" value="Solo Singing"> Solo Singing</label>
+            <label><input type="checkbox" name="performing" value="Group Singing"> Group Singing</label>
+            <label><input type="checkbox" name="performing" value="Solo Dance"> Solo Dance</label>
+            <label><input type="checkbox" name="performing" value="Group Dance"> Group Dance</label>
+            <label><input type="checkbox" name="performing" value="Mimicry"> Mimicry</label>
+            <label><input type="checkbox" name="performing" value="Mono Art"> Mono Art</label>
+            <label><input type="checkbox" name="performing" value="Instrumental Music"> Instrumental Music</label>
+          </div>
+        </div>
+
+        <div class="event-block" style="--accent: #7A5CE0;">
+          <h4><span class="dot"></span>4. Fun &amp; Talent Events</h4>
+          <div class="event-options">
+            <label><input type="checkbox" name="fun" value="Fashion Show"> Fashion Show</label>
+            <label><input type="checkbox" name="fun" value="Photography"> Photography</label>
+            <label><input type="checkbox" name="fun" value="Short Film Making"> Short Film Making</label>
+            <label><input type="checkbox" name="fun" value="Reel Making"> Reel Making</label>
+            <label><input type="checkbox" name="fun" value="Stand-up Comedy"> Stand-up Comedy</label>
+            <label><input type="checkbox" name="fun" value="Talent Show"> Talent Show</label>
+            <label><input type="checkbox" name="fun" value="Ad-Zap"> Ad-Zap</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset id="declarationFieldset">
+        <legend>Declaration</legend>
+        <p class="locked-note">Select at least one event above to unlock this section.</p>
+
+        <div class="declaration-box">
+          I hereby declare that the above information is true and I agree to abide by the rules and regulations of the Inter Department Cultural Events.
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label class="field-label" for="declaration_date">Date</label>
+            <input type="date" id="declaration_date" name="declaration_date" required>
+            <span class="field-msg" id="declaration_date_msg"></span>
+          </div>
+          <div class="field">
+            <label class="field-label" for="student_signature">Student signature</label>
+            <input type="text" id="student_signature" name="student_signature" placeholder="Type full name as signature">
+            <span class="field-msg" id="student_signature_msg"></span>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label class="field-label" for="faculty_signature">Faculty Coordinator signature</label>
+            <input type="text" id="faculty_signature" name="faculty_signature">
+          </div>
+          <div class="field">
+            <label class="field-label" for="hod_signature">Head of the Department signature</label>
+            <input type="text" id="hod_signature" name="hod_signature">
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="submit-row">
+        <button class="submit-btn" type="submit" id="submitBtn" disabled>Submit registration</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  St. Joseph's College (Autonomous), Tiruchirappalli – 620002 · Inter Department Cultural Events
+</footer>
+
+</div><!-- /#mainApp -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
